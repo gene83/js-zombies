@@ -118,7 +118,7 @@ class Player {
    * @name checkPack
    */
   checkPack() {
-    console.log(this._pack.join(', '));
+    console.log(getPack().join(', '));
   }
   /**
    * Player Class Method => takeItem(item)
@@ -176,13 +176,13 @@ class Player {
 
     if (index === -1) {
       console.log(
-        item + ' was not discarded since the item could not be found'
+        item.name + ' was not discarded since the item could not be found'
       );
       return false;
     }
 
     this.getPack().splice(index, 1);
-    console.log(this.name + ': ' + item + ' was discarded');
+    console.log(this.name + ': ' + item.name + ' was discarded');
     return true;
   }
 
